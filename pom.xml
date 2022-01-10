@@ -29,11 +29,13 @@
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
 	</properties>
-		<properties>
+	
+	<properties>
   	<sonar.organization>bibek-devops</sonar.organization>
  	 <sonar.host.url>https://sonarcloud.io</sonar.host.url>
 	</properties>
-	<dependencies>
+	
+	<dependencies> 
 		
 		<dependency>
 			<groupId>org.json</groupId>
