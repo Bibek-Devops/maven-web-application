@@ -13,7 +13,7 @@ node
  }
 
  stage('ExecuteSonarQubeReport'){
- sh "${mavenHome}/bin/mvn clean sonar:sonar"
+ sh "${mavenHome}/bin/mvn clean verify sonar:sonar"
  }
  
  stage('UploadArtifactIntoNexus'){
