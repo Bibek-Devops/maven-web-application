@@ -15,11 +15,11 @@ node
  stage('ExecuteSonarQubeReport'){
  sh "${mavenHome}/bin/mvn clean sonar:sonar"
  }
- /*
+ 
  stage('UploadArtifactIntoNexus'){
  sh "${mavenHome}/bin/mvn clean deploy"
  }
- 
+ /*
  stage('DeployAppintoTomcat'){
  sshagent(['ff8e7c6e-91d1-46b7-a2ae-7b80841604c5']) {
      sh "scp -o StrictHostKeyChecking=no target/maven-web-application.war ec2-user@3.108.42.78:/opt/apache-tomcat-9.0.56/webapps/"
