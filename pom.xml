@@ -12,30 +12,28 @@
 	<description>Maven Web Project for Java Programming Language</description>
 
 	<organization>
-		<name>Mithun Technologies</name>
-		<url>http://mithuntechnologies.com/</url>
+		<name>Bibek Devops</name>
+		<url>http://eazyquestions.in/</url>
 	</organization>
 
-<!-- 	<properties>
-		<jdk.version>1.8</jdk.version>
+	<properties>
+<!-- 		<jdk.version>1.8</jdk.version> -->
 		<spring.version>5.1.2.RELEASE</spring.version>
 		<junit.version>4.11</junit.version>
 		<log4j.version>1.2.17</log4j.version>
-	
+ 		 <sonar.host.url>https://sonarcloud.io</sonar.host.url>
+		<sonar.organization>bibek-devops</sonar.organization>
+		<sonar.projectKey>Bibek-Devops_maven-web-application</sonar.projectKey>
+                 <sonar.login></sonar.login>
+<!-- 	e26092ce5ba94bec01ee7be7a4a5113b028c206a -->
 		
              
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
  
-	</properties> -->
-	
-	<properties>
-		
-  	<sonar.organization>bibek-devops</sonar.organization>
- 	 <sonar.host.url>https://sonarcloud.io</sonar.host.url>
-          <sonar.login>e26092ce5ba94bec01ee7be7a4a5113b028c206a</sonar.login>
-		
 	</properties>
+	
+	
 	
 	<dependencies> 
 		
@@ -121,6 +119,10 @@
 		<finalName>maven-web-application</finalName>
 		
 		<plugins>
+			<pluginGroup>
+     			 org.sonarsource.scanner.maven
+   			 </pluginGroup>
+			
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
@@ -136,7 +138,7 @@
 				<artifactId>jetty-maven-plugin</artifactId>
 				<version>9.2.11.v20150529</version>
 				<configuration>
-					<scanIntervalSeconds>10</scanIntervalSeconds>
+					<scanIntervalSeconds>60</scanIntervalSeconds>
 					<webApp>
 						<contextPath>/maven-web-application</contextPath>
 					</webApp>
