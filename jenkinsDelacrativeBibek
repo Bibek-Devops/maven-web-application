@@ -51,4 +51,26 @@ stage('DeployAppintoTomcat'){
 }
 
   }
+  
+  post{
+
+	  success{
+	    mail body: '''Build Over!.. Success
+
+Regards,
+Bibek Tech,
+8847806437''', subject: 'Build Over...Successfull', to: 'er.bibekanand@gmail.com'
+	  }
+	  
+	  failure{
+	     
+	  	    mail body: '''Build Over!.. Failed
+
+	  Regards,
+	  Mithun Technologies,
+	 8847806437''', subject: 'Build Over...Failed', to: 'er.bibekanand@gmail.com'
+	  }
+	  
+	  
+	}
 }
