@@ -19,14 +19,14 @@ node
  stage('UploadArtifactIntoNexus'){
  sh "${mavenHome}/bin/mvn clean deploy"
  }
- /*
+
  stage('DeployAppintoTomcat'){
- sshagent(['ff8e7c6e-91d1-46b7-a2ae-7b80841604c5']) {
-     sh "scp -o StrictHostKeyChecking=no target/maven-web-application.war ec2-user@3.108.42.78:/opt/apache-tomcat-9.0.56/webapps/"
+sshagent(['4cd206a7-578d-45f1-8391-bb2a7284d3f7']) {
+     sh "scp -o StrictHostKeyChecking=no target/maven-web-application.war ec2-user@35.154.169.201:/opt/apache-tomcat-9.0.56/webapps/"
  }
  
  }
- 
+  /*
  stage('SendNotifications'){
  emailext body: '''Build Over..
 
