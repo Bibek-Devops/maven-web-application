@@ -26,14 +26,14 @@ sshagent(['4cd206a7-578d-45f1-8391-bb2a7284d3f7']) {
  }
  
  }
-  /*
+  
  stage('SendNotifications'){
  emailext body: '''Build Over..
 
  Regards,
- Mithun Technologies,
- 9980923226''', subject: 'Build Over..', to: 'devopstrainingblr@gmail.com'
+ Bibek Technologies,
+ 8847806437''', subject: 'Build Over..', to: 'er.bibekanand@gmail.com'
  }
- */
+ /* end */
  
 }
