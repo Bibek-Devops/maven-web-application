@@ -155,9 +155,9 @@
 				</configuration>
 			</plugin>
 			
-			<plugin>
+<!-- 			<plugin>
      			 org.sonarsource.scanner.maven
-   			 </plugin>
+   			 </plugin> -->
 			
 </plugins>
 	</build>
