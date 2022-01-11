@@ -1,0 +1,54 @@
+pipeline{
+  agent any 
+   tools{
+    maven 'maven3.8.4'
+  }
+  
+  triggers {
+  pollSCM '* * * * *'
+    // cron '* * * * *'
+}
+options {
+  timestamps()
+  buildDiscarder logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '7', daysToKeepStr: '', numToKeepStr: '7')
+}
+ 
+  stages{
+      
+   stage('CheckoutCode')
+ {
+      
+   steps {
+    git branch: 'development ', credentialsId: 'fb58b888-cb9a-4a9c-8b73-c306e4d173fe', url: 'https://github.com/Bibek-Devops/maven-web-application.git'
+      }
+ }
+
+ stage('Build'){
+   steps {
+  sh "mvn clean package"
+}
+ }
+ 
+  stage('Execute SonarQube Report'){
+   steps{
+  sh "mvn clean sonar:sonar"
+}
+ }
+ stage("Upload Artifacts"){
+  steps {
+    sh "mvn clean deploy"
+  }
+
+}
+
+stage('DeployAppintoTomcat'){
+  steps{
+ 
+  sshagent(['4cd206a7-578d-45f1-8391-bb2a7284d3f7']) {
+       sh "scp -o StrictHostKeyChecking=no target/maven-web-application.war ec2-user@35.154.169.201:/opt/apache-tomcat-9.0.56/webapps/"
+   }
+  }
+}
+
+  }
+}
