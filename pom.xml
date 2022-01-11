@@ -30,10 +30,7 @@
 
 	</properties>
 	
-<properties>
-  <sonar.organization>bibek-devops</sonar.organization>
-  <sonar.host.url>https://sonarcloud.io</sonar.host.url>
-</properties>
+
 	
 	<dependencies>
 		
