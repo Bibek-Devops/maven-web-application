@@ -119,9 +119,7 @@
 		<finalName>maven-web-application</finalName>
 		
 		<plugins>
-			<pluginGroup>
-     			 org.sonarsource.scanner.maven
-   			 </pluginGroup>
+			
 			
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
@@ -156,6 +154,10 @@
 					<wtpContextName>maven-web-application</wtpContextName>
 				</configuration>
 			</plugin>
+			
+			<plugin>
+     			 org.sonarsource.scanner.maven
+   			 </plugin>
 			
 </plugins>
 	</build>
