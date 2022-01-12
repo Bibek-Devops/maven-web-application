@@ -1,0 +1,21 @@
+pipeline {
+    agent any
+parameters {
+  choice choices: ['development', 'master', 'uat', 'test'], description: 'Branches ', name: 'BranchName'
+  string defaultValue: 'Bibek', description: 'passing Username ', name: 'Username '
+}
+    stages {
+        stage('Checkout') {
+            steps {
+               git branch: "${params.BranchName}", credentialsId: 'fb58b888-cb9a-4a9c-8b73-c306e4d173fe', url: 'https://github.com/Bibek-Devops/maven-web-application.git'
+      }
+        }
+        
+         stage('Display PersonName') {
+            steps {
+sh "echo My Name is: ${params.Username}"
+      }
+        }
+        
+    }
+}
