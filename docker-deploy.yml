@@ -20,7 +20,7 @@
         state: present
     - name: Start the container
       docker_container:
-        name: hariapp
+        name: myapp
         image: "d3bibek/myapp:0.0.1"
         state: started
         published_ports:
