@@ -1,0 +1,2 @@
+[dev]
+172.31.43.58 ansible_server=ec2-instance
