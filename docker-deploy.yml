@@ -3,7 +3,7 @@
   tasks:
     - name: Install python pip
       yum:
-        name: bottle
+        name: pip3
         state: present
     - name: Install docker
       yum:
